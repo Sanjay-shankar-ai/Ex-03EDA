@@ -38,6 +38,19 @@ df["Embarked"].value_counts()
 df["Pclass"].value_counts()
 df["Survived"].value_counts()
 pd.crosstab(df["Pclass"],df["Survived"])
+pd.crosstab(df["Pclass"],df["Sex"])
+pd.crosstab(df["Sex"],df["Survived"])
+sns.countplot(x='Survived',data=df)
+df.corr()
+sns.countplot(x='Pclass',data=df)
+df.info()
+sns.displot(df["Age"])
+sns.displot(df["Fare"])
+sns.countplot(x='Pclass',hue="Survived",data=df)
+sns.countplot(x='Age',hue='Survived',data=df)
+sns.displot(df[df['Survived']==0]["Age"])
+sns.heatmap(df.corr(),annot=True)
+
 ```
 
 
