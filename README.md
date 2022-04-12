@@ -10,14 +10,60 @@ anomalies to direct specific testing of your hypothesis.
 
 # ALGORITHM
 ### STEP 1
-
+Read the given Data
 ### STEP 2
-
+Get the information about the data
 ### STEP 3
-
+Remove the null values from the data
 ### STEP 4
-
-
+Save the Clean data to the file
 
 # CODE
-# OUPUT
+```
+import numpy as np
+
+import pandas as pd
+
+import seaborn as sns
+
+df=pd.read_csv("titanic_dataset.csv")
+df.info()
+df.head()
+df.isnull().sum()
+df.drop("Cabin",axis=1,inplace=true)
+df.isnull().sum()
+df['Age']=df['Age'].fillna(df['Age'].median()) df['Embarked']=df['Embarked'].fillna(df['Embarked'].mode()[0]) df.isnull().sum()
+df.boxplot()
+df["Embarked"].value_counts()
+df["Pclass"].value_counts()
+df["Survived"].value_counts()
+pd.crosstab(df["Pclass"],df["Survived"])
+```
+
+
+# OUTPUT
+![image](pic1.png)
+![image](pic2.png)
+![image](pic3.png)
+![image](pic4.png)
+![image](pic5.png)
+![image](pic6.png)
+![image](pic7.png)
+![image](pic8.png)
+![image](pic9.png)
+![image](pic10.png)
+![image](pic11.png)
+![image](pic12.png)
+![image](pic13.png)
+![image](pic14.png)
+![image](pic15.png)
+![image](pic16.png)
+![image](pic17.png)
+![image](pic18.png)
+![image](pic19.png)
+![image](pic20.png)
+![image](pic21.png)
+![image](pic22.png)
+
+# RESULT
+Finally, the given data's were analyzed successfully
